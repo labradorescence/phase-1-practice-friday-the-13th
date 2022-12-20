@@ -2,17 +2,19 @@ const url = "http://localhost:3000/movies"
 let movieArr
 let currentMovie
 
-fetch(url)
-.then(resp => resp.json())
-.then(data => {
-    movieArr = data
-    currentMovie = movieArr[0]
-   // console.log(movieArr) //Array
-    movieArr.map((movie) => {
-        addImgToNav(movie)
-    })
-    movieDetail(currentMovie)
-})
+const initialFetch = () => {
+            fetch(url)
+            .then(resp => resp.json())
+            .then(data => {
+                movieArr = data
+                currentMovie = movieArr[0]
+            // console.log(movieArr) //Array
+                movieArr.map((movie) => {
+                    addImgToNav(movie)
+                })
+                movieDetail(currentMovie)
+            })
+}
 
 // ## Challenge 1
 // For each movie returned from `http://localhost:3000/movies` create an image and add it to the `movie-list` nav element.
@@ -96,34 +98,35 @@ watched.addEventListener("click", () => {
 
 // _The blood amount value should stay the same when you click between the different movies._
 
-const form = document.querySelector("form#blood-form")
+const form = document.querySelector("#blood-form")  
 
-const bloodForm = () => {
-    form.addEventListener("submit", (e) => {
-        e.preventDefault()
-        currentMovie.blood_amount += parseInt(e.target["blood-amount"].value)
+const addBloodFunc = () => {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+            currentMovie.blood_amount += parseInt(e.target["blood-amount"].value)
+            
+            const data = { blood_amount : currentMovie.blood_amount };
 
-        const data = { blood_amount : currentMovie.blood_amount };
+            fetch(`${url}/${currentMovie.id}`,  {
+                method: 'PATCH', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log('Success:', data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
 
-        fetch(`${url}/${currentMovie.id}`,  {
-            method: 'PATCH', // or 'PUT'
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-            })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log('Success:', data);
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
 
-        blood.innerText = currentMovie.blood_amount
-        e.target["blood-amount"].value = ""
-    })
+            //update UI
+            blood.textContent = currentMovie.blood_amount
+        })
 }
 
-
-bloodForm()
+initialFetch()
+addBloodFunc()
