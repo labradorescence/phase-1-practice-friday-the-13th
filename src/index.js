@@ -95,3 +95,35 @@ watched.addEventListener("click", () => {
 // - If the value is 20 and I enter 5, then the number of drops for the movie should be 25.
 
 // _The blood amount value should stay the same when you click between the different movies._
+
+const form = document.querySelector("form#blood-form")
+
+const bloodForm = () => {
+    form.addEventListener("submit", (e) => {
+        e.preventDefault()
+        currentMovie.blood_amount += parseInt(e.target["blood-amount"].value)
+
+        const data = { blood_amount : currentMovie.blood_amount };
+
+        fetch(`${url}/${currentMovie.id}`,  {
+            method: 'PATCH', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
+        blood.innerText = currentMovie.blood_amount
+        e.target["blood-amount"].value = ""
+    })
+}
+
+
+bloodForm()
