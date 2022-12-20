@@ -67,27 +67,30 @@ const movieDetail = (movie) => {
 // When you click on the button in the details it should toggle between `Watched` or `Unwatched` depending on the value of `watched` for the movie currently being displayed.
 
 // _The watched value should stay the same when you click between the different movies._
-watched.addEventListener("click", () => {
-    currentMovie.watched = !currentMovie.watched
-    const data = { watched : currentMovie.watched };
 
-    fetch(`${url}/${currentMovie.id}`,  {
-        method: 'PATCH', // or 'PUT'
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log('Success:', data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+const handleWatch = () => {
+    watched.addEventListener("click", () => {
+        currentMovie.watched = !currentMovie.watched
+        const data = { watched : currentMovie.watched };
 
-        watched.textContent = currentMovie.watched? "Watched":"Unwatched"
-})
+        fetch(`${url}/${currentMovie.id}`,  {
+            method: 'PATCH', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
+            watched.textContent = currentMovie.watched? "Watched":"Unwatched"
+    })
+}
 
 // ## Challenge 5
 // On the right side there's a form that allows the user to enter a number of blood drops to add to each movie (don't ask why). For each movie, I should be able to add more drops. 
@@ -129,4 +132,5 @@ const addBloodFunc = () => {
 }
 
 initialFetch()
+handleWatch()
 addBloodFunc()

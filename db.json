@@ -15,7 +15,7 @@
       "release_year": 1981,
       "description": "Five years after the horrible bloodbath at Camp Crystal Lake, it seems Jason Voorhees and his demented mother are in the past. Paul opens up a new camp close to the infamous site, ignoring warnings to stay away, and a sexually-charged group of counselors follow -- including child psychologist major Ginny. But Jason has been hiding out all this time, and now he's ready for revenge.",
       "image": "./assets/f13-2.jpeg",
-      "watched": true,
+      "watched": false,
       "blood_amount": 0
     },
     {
@@ -24,7 +24,7 @@
       "release_year": 1982,
       "description": "An idyllic summer turns into a nightmare of unspeakable terror for yet another group of naive counselors. Ignoring Camp Crystal Lake's bloody legacy, one by one they fall victim to the maniacal Jason who stalks them at every turn.",
       "image": "./assets/f13-3.jpeg",
-      "watched": false,
+      "watched": true,
       "blood_amount": 0
     },
     {
@@ -97,7 +97,7 @@
       "description": "In an attempt to free himself from a state of forgotten limbo, evil dream-demon Freddy Krueger devises a plan to manipulate un-dead mass murderer Jason Voorhees into slicing-and-dicing his way through the teenage population of Springwood. But when the master of dreams loses control of his monster, a brutal fight to the death is the only way out.",
       "image": "./assets/f13-freddyvjason.jpeg",
       "watched": false,
-      "blood_amount": 0
+      "blood_amount": 16
     },
     {
       "id": 12,
@@ -105,8 +105,8 @@
       "release_year": 2009,
       "description": "A group of young adults visit a boarded up campsite named Crystal Lake where they soon encounter the mysterious Jason Voorhees and his deadly intentions.",
       "image": "./assets/f13-remake.jpeg",
-      "watched": false,
-      "blood_amount": 0,
+      "watched": true,
+      "blood_amount": 8,
       "watch": false
     }
   ]
