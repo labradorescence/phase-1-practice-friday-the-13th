@@ -8,7 +8,7 @@ const initialFetch = () => {
             .then(data => {
                 movieArr = data
                 currentMovie = movieArr[0]
-            // console.log(movieArr) //Array
+                //console.log(movieArr) //Array
                 movieArr.map((movie) => {
                     addImgToNav(movie)
                 })
@@ -104,7 +104,7 @@ const addBloodFunc = () => {
         form.addEventListener("submit", (e) => {
             e.preventDefault()
             currentMovie.blood_amount += parseInt(e.target["blood-amount"].value)
-            
+
             const data = { blood_amount : currentMovie.blood_amount };
 
             fetch(`${url}/${currentMovie.id}`,  {
