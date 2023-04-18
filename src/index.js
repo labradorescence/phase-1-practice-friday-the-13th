@@ -15,7 +15,6 @@ let currentMovie
             currentMovie = movieArr[0]
 
             movieArr.map(movie => {
-                ////////////////////////////
                 addImgToNav(movie)
             })
 
