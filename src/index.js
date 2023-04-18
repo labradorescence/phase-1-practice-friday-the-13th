@@ -31,7 +31,8 @@ addEventListener('DOMContentLoaded', () => {
   const movieList = document.querySelector('#movie-list');
   let movieArray = [];
   const movieDetail = document.querySelector('#movie-info');
-  const bloodForm = document.querySelector('blood-form');
+  const bloodForm = document.querySelector('#blood-form');
+  const bloodInput = document.querySelector('#blood-amount');
   /**********VARIABLE DECLARATION END***********/
 
   /**********FETCH REQUESTS START***************/
@@ -86,7 +87,15 @@ addEventListener('DOMContentLoaded', () => {
   /**********FETCH REQUESTS END*****************/
 
   /**********EVENT LISTENERS START**************/
+  bloodInput.addEventListener('change', (e) => console.log(e.target.value));
+  bloodForm.addEventListener('submit', (e) => {
+    event.preventDefault();
+    let newBloodAmount =
+      parseInt(document.querySelector('#movie-info #amount').textContent) +
+      parseInt(e.target['blood-amount'].value);
 
+    document.querySelector('#movie-info #amount').textContent = newBloodAmount;
+  });
   /**********EVENT LISTENERS END****************/
 
   /**********FORM PROCESSING START**************/
@@ -148,6 +157,7 @@ addEventListener('DOMContentLoaded', () => {
       console.log('clicked');
     });
   };
+
   /**********DOM RENDER FUNCTIONS END***********/
 
   /***********GENERAL FUNCTIONS START***********/
@@ -155,11 +165,12 @@ addEventListener('DOMContentLoaded', () => {
   function getMovies() {
     rover.fetch(baseUrl).then((movies) => {
       movieArray = movies;
-      movies.forEach((movie) => renderImages(movie));
-      //   movies.map((movie) => {
-      //     renderImages(movie);
-      //   });
-      currentMovie = movieArray[0];
+
+      movieArray.map((movie) => {
+        currentMovie = movie;
+        renderImages(currentMovie);
+      });
+
       renderMovie(currentMovie);
     });
   }
