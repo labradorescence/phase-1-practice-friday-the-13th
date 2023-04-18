@@ -10,7 +10,8 @@ Run `npx json-server --watch db.json`
 For each movie returned from `http://localhost:3000/movies` create an image and add it to the `movie-list` nav element.
 
 ## Challenge 2
-As soon as the page loads, we should see the details of the **first** movie in the dataset.
+As soon as the page loads, we should see t
+he details of the **first** movie in the dataset.
 
 ## Challenge 3
 When you click on each movie image in the top nav, you should populate the detail area with the `image`, `title`, `release_year`, `description`, `watched`, and `blood_amount` for the movie that was clicked.

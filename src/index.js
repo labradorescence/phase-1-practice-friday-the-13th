@@ -1,3 +1,4 @@
+
 let movieArr
 let currentMovie
 
@@ -96,43 +97,44 @@ watched.addEventListener("click", () => {
 //challenge 5
 const form = document.querySelector("form#blood-form")
 
-form.addEventListener("submit", (e) => {
-    e.preventDefault()
-    //add on to the current movie's blood amount
-    currentMovie.blood_amount += parseInt(e.target["blood-amount"].value)
-    //update the UI
-    blood.innerText = currentMovie.blood_amount
-    //empty the input area
-    e.target["blood-amount"].value = ""
-})
+// form.addEventListener("submit", (e) => {
+//     e.preventDefault()
+//     //add on to the current movie's blood amount
+//     currentMovie.blood_amount += parseInt(e.target["blood-amount"].value)
+//     //update the UI
+//     blood.innerText = currentMovie.blood_amount
+//     //empty the input area
+//     e.target["blood-amount"].value = ""
+// })
 
 
 //challenge 5 with Patch request
-// const form = document.querySelector("form#blood-form")
+// challenge 5 with Patch request
+const form = document.querySelector("form#blood-form")
 
-// form.addEventListener("submit", (e) => {
-//     e.preventDefault()
-//     currentMovie.blood_amount += parseInt(e.target["blood-amount"].value)
+form.addEventListener("submit", (e) => {
+    e.preventDefault()
+    currentMovie.blood_amount += parseInt(e.target["blood-amount"].value)
 
-//     const data = { blood_amount: currentMovie.blood_amount };
+    const data = { blood_amount: currentMovie.blood_amount };
 
-//     fetch(`${url}/${currentMovie.id}`, {
-//       method: 'PATCH', // or 'PUT'
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify(data),
-//     })
-//       .then((response) => response.json())
-//       .then((data) => {
-//         console.log('Success:', data);
-//       })
-//       .catch((error) => {
-//         console.error('Error:', error);
-//       });
+    fetch(`${url}/${currentMovie.id}`, {
+      method: 'PATCH', // or 'PUT'
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
 
-//       //update the UI
-//       blood.innerText = currentMovie.blood_amount
-//       //empty the input area
-//       e.target["blood-amount"].value = ""
-// })
+      //update the UI
+      blood.innerText = currentMovie.blood_amount
+      //empty the input area
+      e.target["blood-amount"].value = ""
+})
