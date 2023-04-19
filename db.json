@@ -106,7 +106,7 @@
       "description": "A group of young adults visit a boarded up campsite named Crystal Lake where they soon encounter the mysterious Jason Voorhees and his deadly intentions.",
       "image": "./assets/f13-remake.jpeg",
       "watched": false,
-      "blood_amount": 0
+      "blood_amount": 90
     }
   ]
 }
