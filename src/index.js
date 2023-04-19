@@ -79,19 +79,23 @@ function getBloodAmount() {
 }
 
 function submitForm(bloodAmount) {
-  bloodForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    currentMovie.blood_amount += parseInt(bloodAmount);
+  bloodForm.addEventListener(
+    'submit',
+    (e) => {
+      e.preventDefault();
+      currentMovie.blood_amount += parseInt(bloodAmount);
 
-    const data = { blood_amount: currentMovie.blood_amount };
+      const data = { blood_amount: currentMovie.blood_amount };
 
-    patchMovie(currentMovie.id, data) //INVOKE PATCH Request with Fetch API
-      .then((data) => data)
-      .catch(console.error);
+      patchMovie(currentMovie.id, data) //INVOKE PATCH Request with Fetch API
+        .then((data) => data)
+        .catch(console.error);
 
-    blood.textContent = currentMovie.blood_amount; //update the UI
-    e.target['blood-amount'].value = '';
-  });
+      blood.textContent = currentMovie.blood_amount; //update the UI
+      e.target['blood-amount'].value = '';
+    },
+    { once: true }
+  );
 }
 
 //FUNCTION INVOCATION
