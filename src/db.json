@@ -7,7 +7,7 @@
       "description": "Camp counselors are stalked and murdered by an unknown assailant while trying to reopen a summer camp that was the site of a child's drowning.",
       "image": "./assets/f13-1.jpeg",
       "watched": false,
-      "blood_amount": 17
+      "blood_amount": 82
     },
     {
       "id": 2,
@@ -61,7 +61,7 @@
       "description": "A young girl who possesses the power of telekinesis accidentally causes her father's death after a family dispute at Crystal Lake. Years later, when a doctor tries to exploit her abilities, her power becomes a hellish curse, and she unwittingly unchains the merciless, bloodthirsty Jason Voorhees from his watery grave.",
       "image": "./assets/f13-newblood.jpeg",
       "watched": false,
-      "blood_amount": 26
+      "blood_amount": 34
     },
     {
       "id": 8,
@@ -79,7 +79,7 @@
       "description": "Jason Voorhees, the living, breathing essence of evil, is back for one fierce, final fling! Tracked down and blown to bits by a special FBI task force, everyone now assumes that he's finally dead. But everybody assumes wrong. Jason has been reborn with the bone-chilling ability to assume the identity of anyone he touches. The terrifying truth is that he could be anywhere, or anybody. In this shocking, blood-soaked finale to Jason's carnage-ridden reign of terror, the horrible secret of his unstoppable killing instinct is finally revealed. And once you know the chilling facts, you'll see him in your nightmares! And he'll see you in hell!",
       "image": "./assets/f13-hell.jpeg",
       "watched": false,
-      "blood_amount": 0
+      "blood_amount": 8
     },
     {
       "id": 10,
