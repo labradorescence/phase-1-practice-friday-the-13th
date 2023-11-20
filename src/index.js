@@ -34,7 +34,7 @@ const url = 'http://localhost:3000/movies'
 
     //PATCH
     function patchMovie(endpoint, data){
-        fetch(`${url}/${endpoint}`, {
+        return fetch(`${url}/${endpoint}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
