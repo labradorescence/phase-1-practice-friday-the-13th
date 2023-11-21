@@ -48,7 +48,6 @@ function createMovieImageInBar(movie){
 }
 
 
-
 function renderMovieDetail(movie){
     currentMovie = movie //later deliverable
 
@@ -62,14 +61,12 @@ function renderMovieDetail(movie){
 }
 
 
-
 function toggleWatchedButton(){
     movieDetailWatched.addEventListener("click", () => {
         currentMovie.watched = !currentMovie.watched
         movieDetailWatched.textContent = currentMovie.watched? "Watched":"Unwatched"
     })
 }
-
 
 //FETCH PATCH
 function patchBlood(urlId, patchData){

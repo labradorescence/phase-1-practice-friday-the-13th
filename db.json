@@ -61,7 +61,7 @@
       "description": "A young girl who possesses the power of telekinesis accidentally causes her father's death after a family dispute at Crystal Lake. Years later, when a doctor tries to exploit her abilities, her power becomes a hellish curse, and she unwittingly unchains the merciless, bloodthirsty Jason Voorhees from his watery grave.",
       "image": "./assets/f13-newblood.jpeg",
       "watched": false,
-      "blood_amount": 0
+      "blood_amount": 16
     },
     {
       "id": 8,
@@ -88,7 +88,7 @@
       "description": "In the year 2455, Old Earth is now a contaminated planet abandoned for centuries -- a brown world of violent storms, toxic landmasses and poisonous seas. Yet humans have returned to the deadly place that they once fled, not to live, but to research the ancient, rusting artifacts of the long-gone civilizations. But it's not the harmful environment that could prove fatal to the intrepid, young explorers who have just landed on Old Earth. For them, it's Friday the 13th, and Jason lives!",
       "image": "./assets/f13-x.jpeg",
       "watched": false,
-      "blood_amount": 0
+      "blood_amount": 50
     },
     {
       "id": 11,
